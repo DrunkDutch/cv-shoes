@@ -33,7 +33,9 @@ gray = cv2.GaussianBlur(gray, (7, 7), 0)
 
 # perform edge detection, then perform a dilation + erosion to
 # close gaps in between object edges
-edged = cv2.Canny(gray, 50, 100)
+edged = cv2.Canny(gray, 80, 150)
+cv2.imshow("Image", edged)
+cv2.waitKey(0)
 edged = cv2.dilate(edged, None, iterations=1)
 edged = cv2.erode(edged, None, iterations=1)
 
